@@ -152,7 +152,7 @@ namespace AppCSQL {
 		this->Close();
 	}
 private: System::Void button_Logowanie_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ konfig = L"datasource = localhost; port = 3306; username = root; password = 506b0edf;database = bazadanych_c++_sql";
+	String^ konfig = L"datasource = 127.0.0.1; port = 3306; username = root; password = 234aaa;database = baza_danych";
 	MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
 	MySqlCommand^ zapytanie_do_bazy = gcnew MySqlCommand("SELECT * FROM uzytkownicy WHERE uzytkownik_nazwa = '"+txt_ID_uzytkownika->Text+"' AND haslo = md5('"+txt_Haslo->Text+"');", lacz_baze);
 	MySqlDataReader^ odczytanie_zapytania;
