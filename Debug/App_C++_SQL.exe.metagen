@@ -24,6 +24,7 @@ Class AppCSQL.Program: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String konfig : Public
     Int32 id_uzytkownika : Public
     Int32 id_teraz : Public
+    Int32 czy_pracownik : Public
 Class AppCSQL.Logowanie: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
