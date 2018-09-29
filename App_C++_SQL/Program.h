@@ -53,6 +53,47 @@ namespace AppCSQL {
 	private: System::Windows::Forms::Button^  button_szablon2;
 	private: System::Windows::Forms::Button^  button_szablon1;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::TabPage^  tabPage3;
+	private: System::Windows::Forms::GroupBox^  groupBox_Uslugi;
+
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button_modyfikuj_usluge;
+	private: System::Windows::Forms::Button^  button_usun_usluge;
+	private: System::Windows::Forms::Button^  button_dodaj_usluge;
+	private: System::Windows::Forms::TextBox^  txt_opis_uslugi;
+	private: System::Windows::Forms::TextBox^  txt_czas_uslugi;
+
+
+
+	private: System::Windows::Forms::TextBox^  txt_cena_uslugi;
+
+	private: System::Windows::Forms::TextBox^  txt_nazwa_uslugi;
+
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::TextBox^  txt_szukaj_usluge;
+
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::DataGridView^  dataGridView_uslugi;
+	private: System::Windows::Forms::TabPage^  tabPage4;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::DataGridView^  dataGridView3;
+	private: System::Windows::Forms::DataGridView^  dataGridView2;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+	private: System::Windows::Forms::TextBox^  txt_pokaz_nazwisko_pracownika;
+	private: System::Windows::Forms::Label^  label13;
+	private: System::Windows::Forms::TextBox^  txt_pokaz_imie_pracownika;
+	private: System::Windows::Forms::Label^  label14;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Button^  button_szukaj_pracownika_uslugi;
+
+
 
 	private: System::Windows::Forms::Button^  button_DodajUzytkownika;
 	public:
@@ -115,7 +156,40 @@ namespace AppCSQL {
 		void InitializeComponent(void)
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->txt_pokaz_nazwisko_pracownika = (gcnew System::Windows::Forms::TextBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->txt_pokaz_imie_pracownika = (gcnew System::Windows::Forms::TextBox());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->button_szukaj_pracownika_uslugi = (gcnew System::Windows::Forms::Button());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox_Uslugi = (gcnew System::Windows::Forms::GroupBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button_modyfikuj_usluge = (gcnew System::Windows::Forms::Button());
+			this->button_usun_usluge = (gcnew System::Windows::Forms::Button());
+			this->button_dodaj_usluge = (gcnew System::Windows::Forms::Button());
+			this->txt_opis_uslugi = (gcnew System::Windows::Forms::TextBox());
+			this->txt_czas_uslugi = (gcnew System::Windows::Forms::TextBox());
+			this->txt_cena_uslugi = (gcnew System::Windows::Forms::TextBox());
+			this->txt_nazwa_uslugi = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->txt_szukaj_usluge = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView_uslugi = (gcnew System::Windows::Forms::DataGridView());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->button_szablon3 = (gcnew System::Windows::Forms::Button());
@@ -163,8 +237,14 @@ namespace AppCSQL {
 			this->label_noweHaslo = (gcnew System::Windows::Forms::Label());
 			this->label_stareHaslo = (gcnew System::Windows::Forms::Label());
 			this->button_Zmien_haslo = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
+			this->tabPage4->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->tabPage3->SuspendLayout();
+			this->groupBox_Uslugi->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_uslugi))->BeginInit();
 			this->tabPage1->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
@@ -177,6 +257,8 @@ namespace AppCSQL {
 			// tabControl1
 			// 
 			this->tabControl1->Alignment = System::Windows::Forms::TabAlignment::Bottom;
+			this->tabControl1->Controls->Add(this->tabPage4);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Location = System::Drawing::Point(0, 2);
@@ -185,6 +267,341 @@ namespace AppCSQL {
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(973, 451);
 			this->tabControl1->TabIndex = 0;
+			// 
+			// tabPage4
+			// 
+			this->tabPage4->Controls->Add(this->txt_pokaz_nazwisko_pracownika);
+			this->tabPage4->Controls->Add(this->label13);
+			this->tabPage4->Controls->Add(this->txt_pokaz_imie_pracownika);
+			this->tabPage4->Controls->Add(this->label14);
+			this->tabPage4->Controls->Add(this->textBox1);
+			this->tabPage4->Controls->Add(this->label12);
+			this->tabPage4->Controls->Add(this->button_szukaj_pracownika_uslugi);
+			this->tabPage4->Controls->Add(this->label11);
+			this->tabPage4->Controls->Add(this->label10);
+			this->tabPage4->Controls->Add(this->label9);
+			this->tabPage4->Controls->Add(this->dataGridView3);
+			this->tabPage4->Controls->Add(this->dataGridView2);
+			this->tabPage4->Controls->Add(this->dataGridView1);
+			this->tabPage4->Location = System::Drawing::Point(4, 4);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(965, 425);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"Pracownicy i us³ugi";
+			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// txt_pokaz_nazwisko_pracownika
+			// 
+			this->txt_pokaz_nazwisko_pracownika->Location = System::Drawing::Point(329, 32);
+			this->txt_pokaz_nazwisko_pracownika->Name = L"txt_pokaz_nazwisko_pracownika";
+			this->txt_pokaz_nazwisko_pracownika->Size = System::Drawing::Size(100, 20);
+			this->txt_pokaz_nazwisko_pracownika->TabIndex = 12;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(253, 32);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(53, 13);
+			this->label13->TabIndex = 11;
+			this->label13->Text = L"Nazwisko";
+			// 
+			// txt_pokaz_imie_pracownika
+			// 
+			this->txt_pokaz_imie_pracownika->Location = System::Drawing::Point(329, 6);
+			this->txt_pokaz_imie_pracownika->Name = L"txt_pokaz_imie_pracownika";
+			this->txt_pokaz_imie_pracownika->Size = System::Drawing::Size(100, 20);
+			this->txt_pokaz_imie_pracownika->TabIndex = 10;
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(253, 6);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(26, 13);
+			this->label14->TabIndex = 9;
+			this->label14->Text = L"Imiê";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->textBox1->Location = System::Drawing::Point(92, 0);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(133, 22);
+			this->textBox1->TabIndex = 8;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label12->Location = System::Drawing::Point(3, 3);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(83, 16);
+			this->label12->TabIndex = 7;
+			this->label12->Text = L"Pracownik:";
+			// 
+			// button_szukaj_pracownika_uslugi
+			// 
+			this->button_szukaj_pracownika_uslugi->Location = System::Drawing::Point(6, 28);
+			this->button_szukaj_pracownika_uslugi->Name = L"button_szukaj_pracownika_uslugi";
+			this->button_szukaj_pracownika_uslugi->Size = System::Drawing::Size(219, 27);
+			this->button_szukaj_pracownika_uslugi->TabIndex = 6;
+			this->button_szukaj_pracownika_uslugi->Text = L"Szukaj";
+			this->button_szukaj_pracownika_uslugi->UseVisualStyleBackColor = true;
+			this->button_szukaj_pracownika_uslugi->Click += gcnew System::EventHandler(this, &Program::button_szukaj_pracownika_uslugi_Click);
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(553, 235);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(192, 13);
+			this->label11->TabIndex = 5;
+			this->label11->Text = L"Us³ugi wykonywane przez pracownika:";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(553, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(60, 13);
+			this->label10->TabIndex = 4;
+			this->label10->Text = L"Pracownik:";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(3, 156);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(114, 13);
+			this->label9->TabIndex = 3;
+			this->label9->Text = L"Wszystkie us³ugi firmy:";
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->AllowUserToAddRows = false;
+			this->dataGridView3->AllowUserToOrderColumns = true;
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Location = System::Drawing::Point(0, 172);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->Size = System::Drawing::Size(366, 253);
+			this->dataGridView3->TabIndex = 2;
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->AllowUserToAddRows = false;
+			this->dataGridView2->AllowUserToOrderColumns = true;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(556, 251);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(409, 174);
+			this->dataGridView2->TabIndex = 1;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToOrderColumns = true;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(556, 19);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(409, 174);
+			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Program::dataGridView1_CellDoubleClick);
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->groupBox_Uslugi);
+			this->tabPage3->Controls->Add(this->button2);
+			this->tabPage3->Controls->Add(this->txt_szukaj_usluge);
+			this->tabPage3->Controls->Add(this->label4);
+			this->tabPage3->Controls->Add(this->dataGridView_uslugi);
+			this->tabPage3->Location = System::Drawing::Point(4, 4);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(965, 425);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Us³ugi";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// groupBox_Uslugi
+			// 
+			this->groupBox_Uslugi->Controls->Add(this->button3);
+			this->groupBox_Uslugi->Controls->Add(this->button_modyfikuj_usluge);
+			this->groupBox_Uslugi->Controls->Add(this->button_usun_usluge);
+			this->groupBox_Uslugi->Controls->Add(this->button_dodaj_usluge);
+			this->groupBox_Uslugi->Controls->Add(this->txt_opis_uslugi);
+			this->groupBox_Uslugi->Controls->Add(this->txt_czas_uslugi);
+			this->groupBox_Uslugi->Controls->Add(this->txt_cena_uslugi);
+			this->groupBox_Uslugi->Controls->Add(this->txt_nazwa_uslugi);
+			this->groupBox_Uslugi->Controls->Add(this->label8);
+			this->groupBox_Uslugi->Controls->Add(this->label7);
+			this->groupBox_Uslugi->Controls->Add(this->label6);
+			this->groupBox_Uslugi->Controls->Add(this->label5);
+			this->groupBox_Uslugi->Location = System::Drawing::Point(0, 0);
+			this->groupBox_Uslugi->Name = L"groupBox_Uslugi";
+			this->groupBox_Uslugi->Size = System::Drawing::Size(609, 422);
+			this->groupBox_Uslugi->TabIndex = 4;
+			this->groupBox_Uslugi->TabStop = false;
+			this->groupBox_Uslugi->Text = L"Us³ugi";
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(528, 366);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 53);
+			this->button3->TabIndex = 11;
+			this->button3->Text = L"Czyœæ pola";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Program::button3_Click);
+			// 
+			// button_modyfikuj_usluge
+			// 
+			this->button_modyfikuj_usluge->Enabled = false;
+			this->button_modyfikuj_usluge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
+			this->button_modyfikuj_usluge->Location = System::Drawing::Point(328, 366);
+			this->button_modyfikuj_usluge->Name = L"button_modyfikuj_usluge";
+			this->button_modyfikuj_usluge->Size = System::Drawing::Size(195, 56);
+			this->button_modyfikuj_usluge->TabIndex = 10;
+			this->button_modyfikuj_usluge->Text = L"Modyfikuj us³ugê";
+			this->button_modyfikuj_usluge->UseVisualStyleBackColor = true;
+			this->button_modyfikuj_usluge->Click += gcnew System::EventHandler(this, &Program::button_modyfikuj_usluge_Click);
+			// 
+			// button_usun_usluge
+			// 
+			this->button_usun_usluge->Enabled = false;
+			this->button_usun_usluge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
+			this->button_usun_usluge->Location = System::Drawing::Point(165, 366);
+			this->button_usun_usluge->Name = L"button_usun_usluge";
+			this->button_usun_usluge->Size = System::Drawing::Size(157, 56);
+			this->button_usun_usluge->TabIndex = 9;
+			this->button_usun_usluge->Text = L"Usuñ us³ugê";
+			this->button_usun_usluge->UseVisualStyleBackColor = true;
+			this->button_usun_usluge->Click += gcnew System::EventHandler(this, &Program::button_usun_usluge_Click);
+			// 
+			// button_dodaj_usluge
+			// 
+			this->button_dodaj_usluge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
+			this->button_dodaj_usluge->Location = System::Drawing::Point(2, 366);
+			this->button_dodaj_usluge->Name = L"button_dodaj_usluge";
+			this->button_dodaj_usluge->Size = System::Drawing::Size(157, 56);
+			this->button_dodaj_usluge->TabIndex = 8;
+			this->button_dodaj_usluge->Text = L"Dodaj us³ugê";
+			this->button_dodaj_usluge->UseVisualStyleBackColor = true;
+			this->button_dodaj_usluge->Click += gcnew System::EventHandler(this, &Program::button_dodaj_usluge_Click);
+			// 
+			// txt_opis_uslugi
+			// 
+			this->txt_opis_uslugi->Location = System::Drawing::Point(116, 148);
+			this->txt_opis_uslugi->Multiline = true;
+			this->txt_opis_uslugi->Name = L"txt_opis_uslugi";
+			this->txt_opis_uslugi->Size = System::Drawing::Size(229, 170);
+			this->txt_opis_uslugi->TabIndex = 7;
+			// 
+			// txt_czas_uslugi
+			// 
+			this->txt_czas_uslugi->Location = System::Drawing::Point(116, 110);
+			this->txt_czas_uslugi->Name = L"txt_czas_uslugi";
+			this->txt_czas_uslugi->Size = System::Drawing::Size(100, 20);
+			this->txt_czas_uslugi->TabIndex = 6;
+			// 
+			// txt_cena_uslugi
+			// 
+			this->txt_cena_uslugi->Location = System::Drawing::Point(116, 70);
+			this->txt_cena_uslugi->Name = L"txt_cena_uslugi";
+			this->txt_cena_uslugi->Size = System::Drawing::Size(100, 20);
+			this->txt_cena_uslugi->TabIndex = 5;
+			// 
+			// txt_nazwa_uslugi
+			// 
+			this->txt_nazwa_uslugi->Location = System::Drawing::Point(116, 30);
+			this->txt_nazwa_uslugi->Name = L"txt_nazwa_uslugi";
+			this->txt_nazwa_uslugi->Size = System::Drawing::Size(229, 20);
+			this->txt_nazwa_uslugi->TabIndex = 4;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(25, 151);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(63, 13);
+			this->label8->TabIndex = 3;
+			this->label8->Text = L"Opis us³ugi:";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(25, 110);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(87, 13);
+			this->label7->TabIndex = 2;
+			this->label7->Text = L"Czas wykonania:";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(25, 73);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(67, 13);
+			this->label6->TabIndex = 1;
+			this->label6->Text = L"Cena us³ugi:";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(25, 33);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(75, 13);
+			this->label5->TabIndex = 0;
+			this->label5->Text = L"Nazwa us³ugi:";
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->button2->Location = System::Drawing::Point(852, 6);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(107, 31);
+			this->button2->TabIndex = 3;
+			this->button2->Text = L"Szukaj";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Program::button2_Click);
+			// 
+			// txt_szukaj_usluge
+			// 
+			this->txt_szukaj_usluge->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
+			this->txt_szukaj_usluge->Location = System::Drawing::Point(694, 6);
+			this->txt_szukaj_usluge->Name = L"txt_szukaj_usluge";
+			this->txt_szukaj_usluge->Size = System::Drawing::Size(152, 29);
+			this->txt_szukaj_usluge->TabIndex = 2;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label4->Location = System::Drawing::Point(611, 9);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(77, 24);
+			this->label4->TabIndex = 1;
+			this->label4->Text = L"Us³uga:";
+			// 
+			// dataGridView_uslugi
+			// 
+			this->dataGridView_uslugi->AllowUserToAddRows = false;
+			this->dataGridView_uslugi->AllowUserToOrderColumns = true;
+			this->dataGridView_uslugi->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView_uslugi->Location = System::Drawing::Point(615, 43);
+			this->dataGridView_uslugi->Name = L"dataGridView_uslugi";
+			this->dataGridView_uslugi->Size = System::Drawing::Size(350, 382);
+			this->dataGridView_uslugi->TabIndex = 0;
+			this->dataGridView_uslugi->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Program::dataGridView_uslugi_CellDoubleClick);
 			// 
 			// tabPage1
 			// 
@@ -207,6 +624,16 @@ namespace AppCSQL {
 			this->tabPage1->Text = L"Pracownicy";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			this->tabPage1->Click += gcnew System::EventHandler(this, &Program::tabPage1_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(229, 245);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(31, 164);
+			this->button1->TabIndex = 9;
+			this->button1->Text = L"W\r\nY\r\nC\r\nZ\r\nY\r\nŒ\r\nÆ";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Program::button1_Click);
 			// 
 			// groupBox3
 			// 
@@ -705,27 +1132,27 @@ namespace AppCSQL {
 			this->button_Zmien_haslo->UseVisualStyleBackColor = true;
 			this->button_Zmien_haslo->Click += gcnew System::EventHandler(this, &Program::button_Zmien_haslo_Click);
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(229, 245);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(31, 164);
-			this->button1->TabIndex = 9;
-			this->button1->Text = L"W\r\nY\r\nC\r\nZ\r\nY\r\nŒ\r\nÆ";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Program::button1_Click);
-			// 
 			// Program
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(975, 454);
+			this->ClientSize = System::Drawing::Size(970, 454);
 			this->Controls->Add(this->tabControl1);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Program";
 			this->Text = L"Program";
 			this->Load += gcnew System::EventHandler(this, &Program::Program_Load);
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage4->ResumeLayout(false);
+			this->tabPage4->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
+			this->groupBox_Uslugi->ResumeLayout(false);
+			this->groupBox_Uslugi->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_uslugi))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
@@ -795,6 +1222,7 @@ private: System::Void txt_Nowe_haslo2_TextChanged(System::Object^  sender, Syste
 
 				 try
 				 {
+					 lacz_baze->Open();
 					 MySqlDataAdapter^ moja_baza = gcnew MySqlDataAdapter();
 					 moja_baza->SelectCommand = zapytanie_do_bazy;
 					 DataTable^ tabela = gcnew DataTable();
@@ -803,13 +1231,37 @@ private: System::Void txt_Nowe_haslo2_TextChanged(System::Object^  sender, Syste
 					 BindingSource^ zrodlo_siatki = gcnew BindingSource();
 					 zrodlo_siatki->DataSource = tabela;
 					 dataGridView_siatkaPracownikow->DataSource = zrodlo_siatki;
-
+					 lacz_baze->Close();
 				 }
 				 catch (Exception^ komunikat_bledu)
 				 {
 					 MessageBox::Show(komunikat_bledu->Message);
 				 }
 			 }
+					  private: void szukaj_uslug(System::Windows::Forms::TextBox^ txt_co_szukasz, System::Windows::Forms::DataGridView^ tab)
+					  {
+						  MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+						  MySqlCommand^ zapytanie_do_bazy = gcnew MySqlCommand("SELECT uslugi_id, nazwa_uslugi AS 'Nazwa uslugi',czas_trwania AS 'Czas wykonania',cena AS 'Cena [zl]',opis_uslugi AS 'Opis' FROM baza_danych.uslugi WHERE nazwa_uslugi LIKE '%" + txt_co_szukasz->Text + "%' ORDER BY nazwa_uslugi;", lacz_baze);
+
+						  try
+						  {
+							  lacz_baze->Open();
+							  MySqlDataAdapter^ moja_baza = gcnew MySqlDataAdapter();
+							  moja_baza->SelectCommand = zapytanie_do_bazy;
+							  DataTable^ tabela = gcnew DataTable();
+							  moja_baza->Fill(tabela);
+
+							  BindingSource^ zrodlo_siatki = gcnew BindingSource();
+							  zrodlo_siatki->DataSource = tabela;
+							  tab->DataSource = zrodlo_siatki;
+							  lacz_baze->Close();
+						  }
+						  catch (Exception^ komunikat_bledu)
+						  {
+							  MessageBox::Show(komunikat_bledu->Message);
+						  }
+						  tab->Columns[0]->Visible = false;
+					  }
 
 private: System::Void button_pracownicy_szukaj_Click(System::Object^  sender, System::EventArgs^  e) {
 	odswiez_siatke();
@@ -1074,6 +1526,204 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	wyczysc_tekst(groupBox3, 1);
 	checkBox_Pracownik->Checked = false;
 	wyswietl_godziny();
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	szukaj_uslug(txt_szukaj_usluge, dataGridView_uslugi);
+}
+private: System::Void button_dodaj_usluge_Click(System::Object^  sender, System::EventArgs^  e) {
+
+
+	if (txt_nazwa_uslugi->Text->Length < 2 || txt_cena_uslugi->Text->Length < 1 || txt_czas_uslugi->Text->Length < 5)
+	{
+		MessageBox::Show("BL¥D!! Nazwa us³ugi < 2 znaki, cena < 1 znak , czas uslugi <5 format: 00:00");
+	}
+	else
+	{
+		MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+		MySqlCommand^ zapytanie = lacz_baze->CreateCommand();
+		MySqlTransaction^ transakcja;
+		
+		String ^ zmiana_przecinka = txt_cena_uslugi->Text->Replace(",",".");
+		lacz_baze->Open();
+
+		transakcja = lacz_baze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		zapytanie->Connection = lacz_baze;
+		zapytanie->Transaction = transakcja;
+
+		try {
+			zapytanie->CommandText = "INSERT into baza_danych.uslugi SET nazwa_uslugi='" + txt_nazwa_uslugi->Text + "', czas_trwania ='" + txt_czas_uslugi->Text + "',cena='" + zmiana_przecinka + "',opis_uslugi = '"+ txt_opis_uslugi->Text +"';";
+			zapytanie->ExecuteNonQuery();
+			
+			transakcja->Commit();
+			MessageBox::Show("Dodanie us³ugi do opcji pomyœlne!");
+			wyczysc_tekst(groupBox_Uslugi, 0);
+		}
+		catch (Exception^ komunikat_bledu)
+		{
+			MessageBox::Show(komunikat_bledu->Message);
+			transakcja->Rollback();
+		}
+		lacz_baze->Close();
+	}
+	szukaj_uslug(txt_szukaj_usluge, dataGridView_uslugi);
+
+}
+private: System::Void dataGridView_uslugi_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	if (e->RowIndex >= 0)
+	{
+		button_modyfikuj_usluge->Enabled = true;
+		button_usun_usluge->Enabled = true;
+		id_teraz = Convert::ToInt32(dataGridView_uslugi->Rows[e->RowIndex]->Cells[0]->Value);
+		txt_nazwa_uslugi->Text = Convert::ToString(dataGridView_uslugi->Rows[e->RowIndex]->Cells["Nazwa uslugi"]->Value);
+		txt_czas_uslugi->Text = Convert::ToString(dataGridView_uslugi->Rows[e->RowIndex]->Cells["Czas wykonania"]->Value);
+		txt_cena_uslugi->Text = Convert::ToString(dataGridView_uslugi->Rows[e->RowIndex]->Cells["Cena [zl]"]->Value);
+		txt_opis_uslugi->Text = Convert::ToString(dataGridView_uslugi->Rows[e->RowIndex]->Cells["Opis"]->Value);
+	}
+}
+private: System::Void button_modyfikuj_usluge_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (txt_nazwa_uslugi->Text->Length < 2 || txt_cena_uslugi->Text->Length < 1 || txt_czas_uslugi->Text->Length < 5)
+	{
+		MessageBox::Show("BL¥D!! Nazwa us³ugi < 2 znaki, cena < 1 znak , czas uslugi <5 format: 00:00");
+	}
+	else
+	{
+		MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+		MySqlCommand^ zapytanie = lacz_baze->CreateCommand();
+		MySqlTransaction^ transakcja;
+		//MySqlDataReader^ dane;
+		lacz_baze->Open();
+		String ^ zmiana_przecinka = txt_cena_uslugi->Text->Replace(",", ".");
+		transakcja = lacz_baze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		zapytanie->Connection = lacz_baze;
+		zapytanie->Transaction = transakcja;
+
+		try {
+			//zapytanie->CommandText = "SELECT * FROM baza_danych.uslugi WHERE uslugi_id = " + id_teraz + "";
+			//dane = zapytanie->ExecuteReader();
+			//dane->Close();
+
+			zapytanie->CommandText = "UPDATE baza_danych.uslugi SET nazwa_uslugi='" + txt_nazwa_uslugi->Text + "', czas_trwania ='" + txt_czas_uslugi->Text + "',cena='" + zmiana_przecinka + "',opis_uslugi = '" + txt_opis_uslugi->Text + "'WHERE uslugi_id = '"+id_teraz+"';";
+			zapytanie->ExecuteNonQuery();
+			MessageBox::Show("Modyfikacja zosta³a wykonana pomyœlnie.");
+			wyczysc_tekst(groupBox_Uslugi, 0);
+			transakcja->Commit();
+		}
+		catch (Exception^ komunikat_bledu)
+		{
+			MessageBox::Show(komunikat_bledu->Message);
+			transakcja->Rollback();
+		}
+		lacz_baze->Close();
+	}
+	szukaj_uslug(txt_szukaj_usluge,dataGridView_uslugi);
+}
+private: System::Void button_usun_usluge_Click(System::Object^  sender, System::EventArgs^  e) {
+	MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+	MySqlCommand^ zapytanie = lacz_baze->CreateCommand();
+	MySqlTransaction^ transakcja;
+	lacz_baze->Open();
+
+	transakcja = lacz_baze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+	zapytanie->Connection = lacz_baze;
+	zapytanie->Transaction = transakcja;
+	
+		if (MessageBox::Show("Czy chcesz usunac wybrana usluge?", "UWAGA !!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
+		{
+			try {
+				zapytanie->CommandText = "DELETE FROM baza_danych.uslugi WHERE uslugi_id = " + id_teraz + ";";
+				zapytanie->ExecuteNonQuery();
+				transakcja->Commit();
+				MessageBox::Show("Us³uga zosta³a usuniêta z bazy");
+			}
+			catch (Exception^ komunikat_bledu)
+			{
+				MessageBox::Show(komunikat_bledu->Message);
+				transakcja->Rollback();
+			}
+			lacz_baze->Close();
+			wyczysc_tekst(groupBox_Uslugi, 0);
+			button_modyfikuj_usluge->Enabled = false;
+			button_usun_usluge->Enabled = false;
+		}
+		szukaj_uslug(txt_szukaj_usluge, dataGridView_uslugi);
+}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	wyczysc_tekst(groupBox_Uslugi, 0);
+	txt_szukaj_usluge->Text = "";
+}
+
+private: System::Void button_szukaj_pracownika_uslugi_Click(System::Object^  sender, System::EventArgs^  e) {
+	MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+	MySqlCommand^ zapytanie_do_bazy = gcnew MySqlCommand("SELECT uzytkownicy_id,uzytkownik_nazwa AS Login,imie AS Imie,nazwisko AS Nazwisko,pracownik FROM uzytkownicy WHERE CONCAT(imie, ' ',nazwisko,uzytkownik_nazwa) LIKE '%" + textBox1->Text + "%' AND pracownik = '1' ORDER BY uzytkownik_nazwa;", lacz_baze);
+
+	try
+	{
+		lacz_baze->Open();
+		MySqlDataAdapter^ moja_baza = gcnew MySqlDataAdapter();
+		moja_baza->SelectCommand = zapytanie_do_bazy;
+		DataTable^ tabela = gcnew DataTable();
+		moja_baza->Fill(tabela);
+
+		BindingSource^ zrodlo_siatki = gcnew BindingSource();
+		zrodlo_siatki->DataSource = tabela;
+		dataGridView1->DataSource = zrodlo_siatki;
+		lacz_baze->Close();
+	}
+	catch (Exception^ komunikat_bledu)
+	{
+		MessageBox::Show(komunikat_bledu->Message);
+	}
+	dataGridView1->Columns[0]->Visible = false;
+}
+private: System::Void dataGridView1_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	id_teraz = Convert::ToInt32(dataGridView1->Rows[e->RowIndex]->Cells[0]->Value);
+	txt_pokaz_imie_pracownika->Text = Convert::ToString(dataGridView1->Rows[e->RowIndex]->Cells["Imie"]->Value);
+	txt_pokaz_nazwisko_pracownika->Text = Convert::ToString(dataGridView1->Rows[e->RowIndex]->Cells["Nazwisko"]->Value);
+	
+	MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+	MySqlCommand^ zapytanie_do_bazy = gcnew MySqlCommand("SELECT uslugi_id, nazwa_uslugi AS 'Nazwa uslugi',czas_trwania AS 'Czas wykonania',cena AS 'Cena [zl]',opis_uslugi AS 'Opis' FROM baza_danych.uslugi ORDER BY nazwa_uslugi;", lacz_baze);
+
+	try
+	{
+		lacz_baze->Open();
+		MySqlDataAdapter^ moja_baza = gcnew MySqlDataAdapter();
+		moja_baza->SelectCommand = zapytanie_do_bazy;
+		DataTable^ tabela = gcnew DataTable();
+		moja_baza->Fill(tabela);
+
+		BindingSource^ zrodlo_siatki = gcnew BindingSource();
+		zrodlo_siatki->DataSource = tabela;
+		dataGridView3->DataSource = zrodlo_siatki;
+		lacz_baze->Close();
+	}
+	catch (Exception^ komunikat_bledu)
+	{
+		MessageBox::Show(komunikat_bledu->Message);
+	}
+	//dataGridView3->Columns[0]->Visible = false;
+	zapytanie_do_bazy = gcnew MySqlCommand("SELECT uslugi.uslugi_id,uslugi.nazwa_uslugi,uslugi.czas_trwania,uslugi.cena,uslugi.opis_uslugi FROM uslugi,pracownik_usluga WHERE uslugi.uslugi_id = pracownik_usluga.uslugi_uslugi_id AND pracownik_usluga.uzytkownicy_uzytkownicy_id = '" +id_teraz+ "' ORDER BY uslugi.nazwa_uslugi;   ",lacz_baze);
+	try
+	{
+		lacz_baze->Open();
+		MySqlDataAdapter^ moja_baza = gcnew MySqlDataAdapter();
+		moja_baza->SelectCommand = zapytanie_do_bazy;
+		DataTable^ tabela = gcnew DataTable();
+		moja_baza->Fill(tabela);
+
+		BindingSource^ zrodlo_siatki = gcnew BindingSource();
+		zrodlo_siatki->DataSource = tabela;
+		dataGridView2->DataSource = zrodlo_siatki;
+		lacz_baze->Close();
+	}
+	catch (Exception^ komunikat_bledu)
+	{
+		MessageBox::Show(komunikat_bledu->Message);
+	}
+	//dataGridView2->Columns[0]->Visible = false;
+
 }
 };
 }
