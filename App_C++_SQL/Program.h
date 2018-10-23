@@ -16,7 +16,8 @@ namespace AppCSQL {
 	{
 	public:
 		String^ konfig = L"datasource = 127.0.0.1; port = 3306; username = root; password = 234aaa;database = baza_danych";
-		int id_uzytkownika, id_teraz, czy_pracownik, id_uslugi;
+		int id_uzytkownika = -1, id_teraz, czy_pracownik, id_uslugi = -1, id_klient = -1;
+		String ^ data_wizyty="", ^godzina_wizyty="";
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::TextBox^  txtPON_koniec;
 	public:
@@ -492,6 +493,7 @@ private: System::Windows::Forms::Button^  button_wizyta_klientszukaj;
 			this->button_wizyta_dodaj->TabIndex = 34;
 			this->button_wizyta_dodaj->Text = L"Dodaj wizyte";
 			this->button_wizyta_dodaj->UseVisualStyleBackColor = true;
+			this->button_wizyta_dodaj->Click += gcnew System::EventHandler(this, &Program::button_wizyta_dodaj_Click);
 			// 
 			// button_wizyta_modyfikacja
 			// 
@@ -576,7 +578,9 @@ private: System::Windows::Forms::Button^  button_wizyta_klientszukaj;
 			// 
 			this->monthCalendar1->Location = System::Drawing::Point(684, 3);
 			this->monthCalendar1->Name = L"monthCalendar1";
+			this->monthCalendar1->ShowTodayCircle = false;
 			this->monthCalendar1->TabIndex = 21;
+			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &Program::monthCalendar1_DateSelected);
 			// 
 			// dataGridView_wizyta_usluga
 			// 
@@ -2041,6 +2045,7 @@ private: System::Void button_ModyfikujUzytkownika_Click(System::Object^  sender,
 		try {
 			zapytanie->CommandText = "SELECT * FROM baza_danych.godziny_pracy WHERE godziny_uzytkownicy_id = "+id_teraz+"";
 			dane = zapytanie->ExecuteReader();
+			bool rezultat = dane->HasRows;
 			dane->Close();
 			
 			if (checkBox_Pracownik->Checked && dane->HasRows)
@@ -2048,7 +2053,7 @@ private: System::Void button_ModyfikujUzytkownika_Click(System::Object^  sender,
 				zapytanie->CommandText = "UPDATE baza_danych.godziny_pracy SET pon_od = '" + txtPON_poczatek->Text + "',pon_do = '" + txtPON_koniec->Text + "',wt_od = '" + txtWT_poczatek->Text + "',wt_do = '" + txtWT_koniec->Text + "', sr_od = '" + txtSR_poczatek->Text + "', sr_do = '" + txtSR_koniec->Text + "',cz_od = '" + txtCZ_poczatek->Text + "',cz_do = '" + txtCZ_koniec->Text + "',pt_od = '" + txtPT_poczatek->Text + "',pt_do = '" + txtPT_koniec->Text + "',sob_od = '" + txtSO_poczatek->Text + "',sob_do = '" + txtSO_koniec->Text + "' WHERE godziny_uzytkownicy_id = '"+id_teraz+"';";
 				zapytanie->ExecuteNonQuery();
 			}
-			else if (checkBox_Pracownik->Checked)
+			else if (checkBox_Pracownik->Checked && rezultat == false)
 			{
 				zapytanie->CommandText = "INSERT into baza_danych.godziny_pracy SET godziny_uzytkownicy_id = '"+id_teraz+"',pon_od = '" + txtPON_poczatek->Text + "',pon_do = '" + txtPON_koniec->Text + "',wt_od = '" + txtWT_poczatek->Text + "',wt_do = '" + txtWT_koniec->Text + "', sr_od = '" + txtSR_poczatek->Text + "', sr_do = '" + txtSR_koniec->Text + "',cz_od = '" + txtCZ_poczatek->Text + "',cz_do = '" + txtCZ_koniec->Text + "',pt_od = '" + txtPT_poczatek->Text + "',pt_do = '" + txtPT_koniec->Text + "',sob_od = '" + txtSO_poczatek->Text + "',sob_do = '" + txtSO_koniec->Text + "';";
 				zapytanie->ExecuteNonQuery();
@@ -2643,7 +2648,7 @@ private: System::Void button_wizyta_klientszukaj_Click(System::Object^  sender, 
 private: System::Void dataGridView_wizyta_klient_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 	if (e->RowIndex >= 0)
 	{
-		id_teraz = Convert::ToInt32(dataGridView_wizyta_klient->Rows[e->RowIndex]->Cells[0]->Value);
+		id_klient = Convert::ToInt32(dataGridView_wizyta_klient->Rows[e->RowIndex]->Cells[0]->Value);
 		txt_wizyta_klient->Text = Convert::ToString(dataGridView_wizyta_klient->Rows[e->RowIndex]->Cells["imie"]->Value)+ "  "+ Convert::ToString(dataGridView_wizyta_klient->Rows[e->RowIndex]->Cells["nazwisko"]->Value);
 		
 	}
@@ -2653,13 +2658,147 @@ private: System::Void button_wizyta_pracownikszukaj_Click(System::Object^  sende
 	dataGridView_wizyta_pracownik->Columns[0]->Visible = false;
 }
 private: System::Void dataGridView_wizyta_pracownik_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-	for (int i = 0; i < 16; i++)
+	String ^ minuty;
+	int licznik = 0;
+	
+	int pomoc = 0;
+	int g_start, g_stop;
+	String^ praca_od,^ praca_do;
+	
+	groupBox_wizyty->Controls->Clear();
+	
+	DateTime^ dzien_tygodnia = Convert::ToDateTime(data_wizyty);
+	int dzien = Convert::ToInt32(dzien_tygodnia->DayOfWeek);
+	
+	if (e->RowIndex >= 0)
 	{
+		id_uzytkownika = Convert::ToInt32(dataGridView_wizyta_pracownik->Rows[e->RowIndex]->Cells[0]->Value);
+	}
+
+	switch (dzien)
+	{
+	case 1:
+		praca_od = "pon_od";
+		praca_do = "pon_do";
+		break;
+	case 2:
+		praca_od = "wt_od";
+		praca_do = "wt_do";
+		break;
+	case 3:
+		praca_od = "sr_od";
+		praca_do = "sr_do";
+		break;
+	case 4:
+		praca_od = "cz_od";
+		praca_do = "cz_do";
+		break;
+	case 5:
+		praca_od = "pt_od";
+		praca_do = "pt_do";
+		break;
+	case 6:
+		praca_od = "sob_od";
+		praca_do = "sob_do";
+		break;
+	}
+		
+	MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+	lacz_baze->Open();
+
+	MySqlCommand^ zapytanie = gcnew MySqlCommand("SELECT date_format("+praca_od+",'%H') AS g_start, date_format("+praca_do+",'%H') AS g_stop FROM godziny_pracy WHERE godziny_uzytkownicy_id = "+id_uzytkownika+"",lacz_baze);
+	MySqlDataReader^ dane;
+	dane = zapytanie->ExecuteReader();
+	dane->Read();
+
+	if (dane->HasRows)
+	{
+		g_start = Convert::ToInt32(dane->GetInt32("g_start"));
+		g_stop = Convert::ToInt32(dane->GetInt32("g_stop"));
+	}
+	
+	
+	int godziny = g_start;
+	if(data_wizyty != "")
+	for (int i = 0; i <= g_stop; i++)
+	{
+		if (licznik >= 1)
+		{
+			minuty = "30";
+			licznik = 0;
+		}
+		else
+		{
+			minuty = "00";
+			licznik++;
+		}
 		Windows::Forms::TextBox^ txt_godziny = gcnew Windows::Forms::TextBox();
 		groupBox_wizyty->Controls->Add(txt_godziny);
-		txt_godziny->Text = Convert::ToString(i);
+		godzina_wizyty = " " + Convert::ToString(godziny) + ":" + Convert::ToString(minuty);
+		txt_godziny->Text = godzina_wizyty;
+		txt_godziny->Click += gcnew System::EventHandler(this, &Program::txt_klik);
 		txt_godziny->Width = 180;
 		txt_godziny->Location = System::Drawing::Point(10, 15 + 25 * i);
+		
+		if (pomoc)
+		{
+			godziny++;
+			pomoc = 0;
+		}
+		else
+		{
+			pomoc = 1;
+		}	
+	}
+	else
+	{
+		MessageBox::Show("Wybierz najpierw termin");
+	}
+}
+private: void txt_klik(System::Object^  sender, System::EventArgs^  e)
+{
+	TextBox^ pole = safe_cast<TextBox^>(sender);
+	godzina_wizyty = pole->Text;
+	txt_wizyta_termin->Text = data_wizyty + " " + godzina_wizyty;
+}
+
+
+
+private: System::Void monthCalendar1_DateSelected(System::Object^  sender, System::Windows::Forms::DateRangeEventArgs^  e) {
+	//data_wizyty = Char::Format(e->Start.ToChar());
+	txt_wizyta_termin->Text = data_wizyty->Replace(".","-");
+	
+}
+private: System::Void button_wizyta_dodaj_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (id_uslugi == -1 || id_klient == -1 || id_uzytkownika == -1 || txt_wizyta_klient->Text->Length < 2 ||txt_wizyta_usluga->Text->Length < 2 || txt_wizyta_termin->Text->Length < 2 )
+	{
+		MessageBox::Show("Nie wybrane w siatce uslugi lub klient lub pracownik");
+	}
+	else
+	{
+		MySqlConnection^ lacz_baze = gcnew MySqlConnection(konfig);
+		MySqlCommand^ zapytanie = lacz_baze->CreateCommand();
+		MySqlTransaction^ transakcja;
+		lacz_baze->Open();
+
+		transakcja = lacz_baze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		zapytanie->Connection = lacz_baze;
+		zapytanie->Transaction = transakcja;
+
+		try {
+			DateTime^ rezerwacja_od = Convert::ToDateTime(txt_wizyta_termin->Text);
+			zapytanie->CommandText = "INSERT INTO wizyty SET klienci_id = "+id_klient +", uslugi_id = "+id_uslugi +", uzytkownicy_id = "+id_uzytkownika +",rezerwacja_od = '"+rezerwacja_od+"', rezerwacja_do = '"+rezerwacja_od+"',status = 'oczekuje';";
+			zapytanie->ExecuteNonQuery();
+			transakcja->Commit();
+			MessageBox::Show("Dodanie rezerwacji pomyœlne.");
+		}
+		catch (Exception^ komunikat_bledu)
+		{
+			MessageBox::Show(komunikat_bledu->Message);
+			transakcja->Rollback();
+		}
+		lacz_baze->Close();
 	}
 }
 };

@@ -26,6 +26,9 @@ Class AppCSQL.Program: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 id_teraz : Public
     Int32 czy_pracownik : Public
     Int32 id_uslugi : Public
+    Int32 id_klient : Public
+    System.String data_wizyty : Public
+    System.String godzina_wizyty : Public
 Class AppCSQL.Logowanie: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

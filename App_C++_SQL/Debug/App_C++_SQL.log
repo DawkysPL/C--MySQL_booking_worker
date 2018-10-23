@@ -1,6 +1,13 @@
 ﻿  Logowanie.cpp
+d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): error C2665: "System::Windows::Forms::MessageBox::Show": żadne z przeciążeń 21 nie może konwertować wszystkich typów argumentów
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: może to być „System::Windows::Forms::DialogResult System::Windows::Forms::MessageBox::Show(System::String ^)”
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: podczas próby dopasowania listy argumentów "(wchar_t)"
   Program.cpp
+d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): error C2665: "System::Windows::Forms::MessageBox::Show": żadne z przeciążeń 21 nie może konwertować wszystkich typów argumentów
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: może to być „System::Windows::Forms::DialogResult System::Windows::Forms::MessageBox::Show(System::String ^)”
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: podczas próby dopasowania listy argumentów "(wchar_t)"
   main.cpp
+d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): error C2665: "System::Windows::Forms::MessageBox::Show": żadne z przeciążeń 21 nie może konwertować wszystkich typów argumentów
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: może to być „System::Windows::Forms::DialogResult System::Windows::Forms::MessageBox::Show(System::String ^)”
+  d:\pobrane_na_d\c++_bazadanych\c++_bazadanych\app_c++_sql\app_c++_sql\program.h(2778): note: podczas próby dopasowania listy argumentów "(wchar_t)"
   Generowanie kodu...
-  Logowanie.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
-  App_C++_SQL.vcxproj -> D:\Pobrane_na_D\C++_bazadanych\C++_bazadanych\App_C++_SQL\Debug\App_C++_SQL.exe
